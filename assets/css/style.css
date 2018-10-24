@@ -7,31 +7,92 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: slategrey;
 }
 
 h1 {
     font-size: 2.5rem;
-    font-family: 'Fredericka the Great', cursive;
 }
 
 h2 {
     font-size: 2rem;
-    font-family: 'Cormorant', serif;
 }
 
 h3 {
     font-size: 1.5rem;
-    font-family: 'Marcellus SC', serif;
 }
 
 h4 {
     font-size: 1.2rem;
-    font-family: 'Cormorant', serif;
 }
 
-p {
-    padding-top: 2em;
-    line-height: 1.8em;
-    font-family: 'Cormorant', serif;
+/*  */
+
+
+.container {
+    width: 500px;
+    text-align: center;
+    /* display: grid;
+    grid-template-columns: auto; */
+}
+
+.container > div {
+    margin: 3em;
+}
+
+.title {
+    padding-bottom: 2em;
+}
+
+.input-area {
+    display: grid;
+    grid-gap: 1em;
+}
+
+input {
+    font-size: 3em;
+    width: 3em;
+    text-align: center;
+}
+
+.time-header {
+    text-align: center;
+    padding: 1em;
+    grid-area: header;
+
+}
+
+.time-hour {
+    grid-area: hour;
+}
+
+.time-min {
+    grid-area: min;
+}
+
+.time-colon {
+    grid-area: colon;
+    padding-top: .5em;
+}
+
+.time {
+    border: solid black 1px;
+    padding: 1em;
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "hour colon min"
+    ;
+}
+.button-area {
+    padding-top: 3em;
+}
+
+button {
+    padding: 2em 3em;
+    border-radius: 10px;
 }

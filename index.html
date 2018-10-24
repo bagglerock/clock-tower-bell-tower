@@ -5,43 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/reset.css" type="text/css">
-    <link rel="stylesheet" href="./assets/css/style.css" type="type/css">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
     <title>All Along the Clock Tower</title>
 </head>
 <body>
 
-    <div>
+    <div class="container">
+        <div class="title"><h1>All Along the Clock Tower</h1></div>
         <div class="input-area">
 
-            <div class="start-time">
-                <div>
+            <div class="time">
+                <div class="time-header">
                     <h2>Start Time</h2>
                 </div>
-                <div>
+                <div class="time-hour">
                     <input type="text" class="start hour" id="start-hour" maxlength="2">
                 </div>
-                <div>
+                <div class="time-colon"><h2>:</h2></div>
+                <div class="time-min">
                     <input type="text" class="start min" id="start-min" maxlength="2">
                 </div>
             </div>
-            <div class="end-time">
-                <div>
+            <div class="time">
+                <div class="time-header">
                     <h2>End Time</h2>
                 </div>
-                <div>
+                <div class="time-hour">
                     <input type="text" class="end hour" id="end-hour" maxlength="2">
                 </div>
-                <div>
+                <div class="time-colon"><h2>:</h2></div>
+                <div class="time-min">
                     <input type="text" class="end min end" id="end-min" maxlength="2">
                 </div>
             </div>
 
-            <div class="button">
-                <button id="button">Submit</button>
+            <div class="button-area">
+                <button class="button" id="button">Submit</button>
             </div>
         </div>
-        <div class="error-area" id="error"></div>
-        <div class="result-area" id="result"></div>
+        <div class="error-area">
+            <h3 id="error"></h3>
+        </div>
+        <div class="result-area">
+            <h3 id="result"></h3>
+        </div>
     </div>
 
     <script src="./assets/js/app.js" type="text/javascript"></script>

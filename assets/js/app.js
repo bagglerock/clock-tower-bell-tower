@@ -1,24 +1,15 @@
 const calculateTolls = (sh, sm, eh, em) => {
     let rings = 0;
-    let startHOUR = sh;
-    let endHOUR = eh;
-    //fix the start hour to be ahead by one if the minutes are more than 0
-    if (sm > 0){
-        startHOUR ++;
-    }
-    //fix the start hour to be in 12 hour time
-    startHOUR %= 12;
-    if (startHOUR === 0){
-        startHOUR += 12;
-    }
-    //fix the end hour to be in 12 hour time
-    endHOUR %= 12;
-    if (endHOUR === 0){
-        endHOUR += 12;
-    }
+    if(sh === eh && sm === em){
+        rings = 157;
+    } else {
+        let startHOUR = sh;
+        let endHOUR = eh;
 
-    console.log(startHOUR);
-    console.log(endHOUR);
+    
+        console.log(startHOUR);
+        console.log(endHOUR);
+    }
     return rings;
 
 }
@@ -124,3 +115,4 @@ document.getElementById("button").addEventListener("click", () => {
     }
     
 })
+
