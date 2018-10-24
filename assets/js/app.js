@@ -1,3 +1,29 @@
+const calculateTolls = (sh, sm, eh, em) => {
+    let rings = 0;
+    let startHOUR = sh;
+    let endHOUR = eh;
+    //fix the start hour to be ahead by one if the minutes are more than 0
+    if (sm > 0){
+        startHOUR ++;
+    }
+    //fix the start hour to be in 12 hour time
+    startHOUR %= 12;
+    if (startHOUR === 0){
+        startHOUR += 12;
+    }
+    //fix the end hour to be in 12 hour time
+    endHOUR %= 12;
+    if (endHOUR === 0){
+        endHOUR += 12;
+    }
+
+    console.log(startHOUR);
+    console.log(endHOUR);
+    return rings;
+
+}
+
+
 const hour = document.getElementsByClassName("hour");
 const min = document.getElementsByClassName("min");
 
@@ -87,8 +113,11 @@ document.getElementById("button").addEventListener("click", () => {
 
     //make sure all the fields are set
     if(startHour !== "" && startMin !== "" && endHour !== "" && endMin !== ""){
-        const result = `Start Time is ${startHour}:${startMin} and End Time is ${endHour}:${endMin}`;
-        document.getElementById("result").innerHTML = result;
+        const result = calculateTolls(startHour, startMin, endHour, endMin);
+        const overview = `Start Time is ${startHour}:${startMin} and End Time is ${endHour}:${endMin}`;
+        document.getElementById("error").innerHTML = overview;
+        document.getElementById("result").innerHTML = `There will be ${result} rings.`;
+        
     //show an error if the fields are not hit
     } else {
         document.getElementById("error").innerHTML = "all the fields are not filled";
