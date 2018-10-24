@@ -48,19 +48,26 @@ for (let i = 0; i < min.length; i++){
     })
 }
 
+
+//  This section is to move focus to the next element in the DOM so we dont have to tab over
 const start = document.getElementsByClassName("start");
 const end = document.getElementsByClassName("end");
 
+// set an event listener to the class start
 for (let i = 0; i < start.length; i++){
     start[i].addEventListener("keyup", (e) => {
+        // make sure that the length in the input is 2
         if(e.target.value.length === 2){
+            // make sure there is another element after
             if (i < start.length -1){
+                // move the focus
                 start[i+1].focus();
             }
         }
     })
 }
 
+// see comments above
 for (let i = 0; i < start.length; i++){
     end[i].addEventListener("keyup", (e) => {
         if(e.target.value.length === 2){
@@ -71,15 +78,18 @@ for (let i = 0; i < start.length; i++){
     })
 }
 
+// what happens when the button is clicked
 document.getElementById("button").addEventListener("click", () => {
     const startHour = document.getElementById("start-hour").value;
     const startMin = document.getElementById("start-min").value;
     const endHour = document.getElementById("end-hour").value;
     const endMin = document.getElementById("end-min").value;
 
+    //make sure all the fields are set
     if(startHour !== "" && startMin !== "" && endHour !== "" && endMin !== ""){
         const result = `Start Time is ${startHour}:${startMin} and End Time is ${endHour}:${endMin}`;
         document.getElementById("result").innerHTML = result;
+    //show an error if the fields are not hit
     } else {
         document.getElementById("error").innerHTML = "all the fields are not filled";
     }
