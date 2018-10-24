@@ -120,7 +120,7 @@ document.getElementById("button").addEventListener("click", () => {
 
   //make sure all the fields are set
   if (startHour.value !== "" && startMin.value !== "" && endHour.value !== "" && endMin.value !== "") {
-    const result = calculateTolls(startHour, startMin, endHour, endMin);
+    const result = calculateTolls(startHour.value, startMin.value, endHour.value, endMin.value);
     const overview = `Start Time is ${startHour.value}:${startMin.value} and End Time is ${endHour.value}:${endMin.value}`;
     document.getElementById("reiteration").innerHTML = overview;
     document.getElementById(
