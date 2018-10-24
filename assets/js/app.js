@@ -113,19 +113,23 @@ for (let i = 0; i < start.length; i++) {
 
 // what happens when the button is clicked
 document.getElementById("button").addEventListener("click", () => {
-  const startHour = document.getElementById("start-hour").value;
-  const startMin = document.getElementById("start-min").value;
-  const endHour = document.getElementById("end-hour").value;
-  const endMin = document.getElementById("end-min").value;
+  let startHour = document.getElementById("start-hour");
+  let startMin = document.getElementById("start-min");
+  let endHour = document.getElementById("end-hour");
+  let endMin = document.getElementById("end-min");
 
   //make sure all the fields are set
-  if (startHour !== "" && startMin !== "" && endHour !== "" && endMin !== "") {
+  if (startHour.value !== "" && startMin.value !== "" && endHour.value !== "" && endMin.value !== "") {
     const result = calculateTolls(startHour, startMin, endHour, endMin);
-    const overview = `Start Time is ${startHour}:${startMin} and End Time is ${endHour}:${endMin}`;
+    const overview = `Start Time is ${startHour.value}:${startMin.value} and End Time is ${endHour.value}:${endMin.value}`;
     document.getElementById("reiteration").innerHTML = overview;
     document.getElementById(
       "result"
     ).innerHTML = `There will be ${result} rings.`;
+    startHour.value = "";
+    startMin.value = "";
+    endHour.value = "";
+    endMin.value = "";
 
     //show an error if the fields are not hit
   } else {
