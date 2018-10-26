@@ -1,3 +1,4 @@
+//function that takes in start hour, start minute, end hour, and end minute
 const calculateTolls = (sh, sm, eh, em) => {
   //initialize the ring number
   let rings = 0;
@@ -37,6 +38,7 @@ const min = document.getElementsByClassName("min");
 
 // loop through the hour class and add an event listener for every key up
 for (let i = 0; i < hour.length; i++) {
+  //keyup is used because the second number typed aka e.target.value doesnt have the second value when its keypress or keydown
   hour[i].addEventListener("keyup", e => {
     // the result div
     const error = document.getElementById("error");
@@ -59,11 +61,13 @@ for (let i = 0; i < hour.length; i++) {
   });
 }
 
+//same as above, but for the minutes
 for (let i = 0; i < min.length; i++) {
   min[i].addEventListener("keyup", e => {
     // the result div
     const error = document.getElementById("error");
     // if the key press is 0-9 or a backspace
+    //keycode is going to be deprecated so just use which
     if ((e.which >= 48 && e.which <= 57) || e.which === 8) {
       //if the value in the text box is not between 0 and 24
       if (e.target.value > 59 || e.target.value < 0) {

@@ -53,6 +53,15 @@ h4 {
     border-bottom: 1px solid black;
 }
 
+.explanation {
+    text-align: left;
+    font-family: 'Cinzel', serif;
+}
+
+.explanation > p {
+    margin: 1em;
+}
+
 .input-area {
     display: grid;
     grid-gap: 1em;
